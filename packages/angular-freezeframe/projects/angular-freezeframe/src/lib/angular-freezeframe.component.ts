@@ -11,7 +11,7 @@ export interface AngularFreezeframeEvent {
 @Component({
   selector: 'angular-freezeframe',
   template: `
-    <div className="angular-freezeframe">
+    <div class="angular-freezeframe">
       <div #slotRef><ng-content></ng-content></div>
       <div *ngIf="!slotRef.innerHTML.trim()">
         <img #freezeRef src="{{src}}" />
@@ -29,7 +29,7 @@ export class AngularFreezeframeComponent implements AfterViewInit, OnDestroy {
   @Output() stopEvent = new EventEmitter<AngularFreezeframeEvent>();
   @Output() toggleEvent = new EventEmitter<AngularFreezeframeEvent>();
 
-  @ViewChild('freezeRef', { read: ElementRef }) freezeRef!: ElementRef;
+  @ViewChild('freezeRef') freezeRef!: ElementRef;
   @ViewChild('slotRef') slotRef!: ElementRef;
 
   ngAfterViewInit(): void {
