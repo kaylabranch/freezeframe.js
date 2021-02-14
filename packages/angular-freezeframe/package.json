@@ -28,7 +28,7 @@
     "build": "rm -rf ./dist && npm run build:lib && npm run build:demo",
     "build:demo": "ng build",
     "build:lib": "ng build angular-freezeframe",
-    "install": "npm build:lib",
+    "install": "npm run build:lib",
     "test": "ng test angular-freezeframe --no-watch --no-progress --browsers=ChromeHeadlessCI",
     "lint": "ng lint"
   },

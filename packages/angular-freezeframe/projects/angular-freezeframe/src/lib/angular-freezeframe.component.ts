@@ -8,10 +8,12 @@ export interface AngularFreezeframeEvent {
   isPlaying: boolean
 }
 
+const SELECTOR = 'angular-freezeframe'
+
 @Component({
-  selector: 'angular-freezeframe',
+  selector: SELECTOR,
   template: `
-    <div class="angular-freezeframe">
+    <div class="${SELECTOR}">
       <div #slotRef><ng-content></ng-content></div>
       <div *ngIf="!slotRef.innerHTML.trim()">
         <img #freezeRef src="{{src}}" />
